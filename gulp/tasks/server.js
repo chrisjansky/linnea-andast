@@ -9,7 +9,8 @@ module.exports = function(config, gulp, browserSync, hygienist) {
         },
         middleware: hygienist(config.dev.root)
       },
-      notify: false
+      notify: false,
+      xip: true
     });
   });
 
