@@ -1,0 +1,8 @@
+.flickity-enabled.is-draggable {
+  .flickity-viewport {
+    cursor: inherit;
+  }
+  .flickity-viewport.is-pointer-down {
+    cursor: url("../images/cursor-active.png") 7 7, pointer;
+  }
+}

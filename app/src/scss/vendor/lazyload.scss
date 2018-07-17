@@ -1,0 +1,13 @@
+[data-src] {
+  opacity: 0;
+
+  transition: opacity $duration--l;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+img:not([src]) {
+  visibility: hidden;
+}

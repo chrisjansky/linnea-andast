@@ -1,0 +1,60 @@
+extends _templates/_site
+
+append template-variables
+  - var page = {modifier: "Inverse"}
+
+block template-body
+  +hud("About")
+
+  .m-constraint
+    .m-masthead(data-waypoint="Masthead")
+      include ../svg/masthead.svg
+      include ../svg/masthead.svg
+    .m-constraint__holder
+      img.m-constraint__portrait(data-src="src/images/temp/about-portrait-2.jpg" alt="Portrait")
+  
+  .m-top
+    a.m-top__scroll(href="#about")
+      
+    nav.m-top__nav
+      each page in pages
+        unless page.name == "About"
+          a.m-top__link(href=page.href target=page.external ? "_blank" : null)= page.name
+
+  #about.m-about
+    .m-about__content
+      p.m-about__text Visual artist &amp; illustrator, based in Gothenburg #[span.m-about__super (SE)], b.&nbsp;#[span.m-about__born 1989]
+
+      h1.m-about__title ( Exhibitions )
+      ul.m-about__list
+        li
+          strong.m-about__year 2018
+          ul.m-about__bulletlist
+            li OSLO Art Oslo
+            li STOCKHOLM Affordable Art Fair
+        li
+          strong.m-about__year 2017
+          ul.m-about__bulletlist
+            li COPENHAGEN Oxholm Gallery
+            li BEIJING Royal Scandinavia
+            li SAN FRANCISCO 111 Minna Gallery
+        li
+          strong.m-about__year 2016
+          ul.m-about__bulletlist
+            li MILAN Affogato Fair
+
+      h1.m-about__title ( Clients )
+      ul.m-about__bulletlist
+        li Ikea
+        li Marimekko
+        li Artilleriet
+        li Monki
+        li Slowdown Studio
+
+      h1.m-about__title ( Press )
+      ul.m-about__bulletlist
+        li: a(href="javascript:") INTERVIEW Ballpit Magazine
+        li: a(href="javascript:") INTERVIEW Ikea
+        li: a(href="javascript:") INTERVIEW Artistmag
+
+      small.o-author Website by #[a(href="https://christianjansky.name") Christian Jánský]

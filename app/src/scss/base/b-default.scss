@@ -1,0 +1,68 @@
+/* Defaults */
+$default__family:  $font__serif;
+$default__weight:  normal;
+$default__leading: $leading--b;
+$default__color:   $primary--500;
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  font: $default__weight 1em $default__family;
+  line-height: $default__leading;
+
+  color: $default__color;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+canvas,
+iframe {
+  display: block;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+mark {
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  &:link    { color: $c-link; }
+  &:visited { color: $c-visited; }
+  &:hover   { color: $c-hover; }
+  &:active  { color: $c-active; }
+
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+nav a {
+  text-decoration: none;
+}
+
+::selection {
+  background-color: $c-select__bg;
+  color: $c-select__text;
+  text-shadow: none;
+}
+
+body,
+input,
+textarea,
+button {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

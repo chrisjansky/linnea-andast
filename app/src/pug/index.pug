@@ -1,0 +1,29 @@
+extends _templates/_site
+
+block template-body
+  +hud("Index")
+
+  .m-masthead(data-waypoint="Masthead")
+    include ../svg/masthead.svg
+    include ../svg/masthead.svg
+  
+  .m-top
+    a.m-top__scroll(href="#work")
+      
+    nav.m-top__nav
+      each page in pages
+        unless page.name == "Index"
+          a.m-top__link(href=page.href target=page.external ? "_blank" : null)= page.name
+  
+  #work.m-projects(data-slider)
+    each artwork in [1, 2, 3, 4, 5, 6]
+      figure.m-projects__item
+        .m-projects__frame
+          img.m-projects__image(data-flickity-lazyload="src/images/temp/artwork-" + artwork + ".jpg")
+        figcaption.m-projects__caption
+          if artwork == 2 || artwork == 5
+            span.m-projects__info
+              h1.m-projects__title Black Monday
+              mark.m-projects__year 2018
+            strong.m-projects__media Silkscreen, 50&times;70 cm
+            a.m-projects__button(href="javascript:" target="_blank") Buy

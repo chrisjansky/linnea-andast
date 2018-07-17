@@ -1,0 +1,17 @@
+mixin hud(slug)
+  header.m-hud
+    button.m-hud__toggle(type="button" data-toggle="Hud")
+      | (&nbsp;
+      span.m-hud__open M
+      span.m-hud__close &times;
+      | &nbsp;)
+
+    .m-hud__content
+      .m-hud__stamp
+
+      nav.m-hud__pages
+        each page in pages
+          unless slug == page.name
+            a.m-hud__link(href=page.href target=page.external ? "_blank" : null)= page.name
+
+  span.m-hud__dim(data-toggle="Hud")

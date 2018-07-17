@@ -1,0 +1,20 @@
+$leading--b:  1.5;
+$leading--s:  1.333;
+
+$fluid--b:    1.75vmax;
+$fluid--s:    1.25vmax;
+
+$outer--b:    1.5rem;
+
+$masthead-height: 25vh;
+
+$duration--b: .25s;
+$duration--l: .5s;
+
+$e__medium--out: cubic-bezier(0.165, 0.84, 0.44, 1); /* easeOutQuart */
+
+/* Breakpoints */
+$bp__phablet: 410px;
+$bp__tablet:  760px;
+$bp__laptop:  1008px;
+$bp__desktop: 1264px;

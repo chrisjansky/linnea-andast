@@ -1,0 +1,110 @@
+.m-hud {
+  font-size: $fluid--b;
+
+  &__content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+
+    color: white;
+    background-color: $primary--500;
+
+    transform: translateY(-100%);
+    visibility: hidden;
+
+    transition: transform .5s $e__medium--out .25s, visibility 0s $e__medium--out .75s;
+
+    .Hud--is-active & {
+      transform: translateY(0%);
+      visibility: visible;
+      transition-delay: 0s;
+    }
+
+    .Inverse & {
+      color: $primary--500;
+      background-color: white;
+    }
+  }
+
+  &__toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+
+    @include reset-button;
+    width: 100%;
+    font-feature-settings: "c2sc";
+
+    transition: .5s $e__medium--out;
+
+    body:not(.Masthead--active) & {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .Hud--is-active & {
+      color: white;
+    }
+    .Inverse.Hud--is-active & {
+      color: $primary--500;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .Hud--is-active &__open,
+  body:not(.Hud--is-active) &__close {
+    display: none;
+  }
+
+  &__stamp {
+    height: $masthead-height;
+    margin-top: #{$fluid--b * $leading--b}; /* .m-hud__toggle height */
+  }
+
+  &__pages {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: .25em;
+    padding: $outer--b;
+  }
+
+  &__link {
+    transition: opacity .5s $e__medium--out;
+    opacity: 0;
+
+    .Hud--is-active & {
+      opacity: 1;
+    }
+
+    @for $i from 1 through 4 {
+      .Hud--is-active &:nth-child(#{$i}) {
+        transition-delay: #{.25s + $i * .125s};
+      }
+    }
+  }
+
+  .Hud--is-active &__dim {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 100vh;
+
+    opacity: .5;
+
+    cursor: url("../images/cursor-close.png") 15 15, pointer;
+  }
+
+  .Inverse.Hud--is-active &__dim {
+    cursor: url("../images/cursor-inverse-close.png") 15 15, pointer;
+  }
+}

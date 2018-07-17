@@ -1,0 +1,35 @@
+block template-variables
+  - var page = {title: "Linnéa And-Ast", description: "", modifier: ""}
+
+doctype
+html(lang="en")
+  head
+    block template-head
+      meta(charset="utf-8")
+      title!= page.title
+      meta(name="description" content=page.description)
+      meta(name="author" content="Christian Jánský")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      
+      link(rel="stylesheet" href="https://use.typekit.net/odw2sqi.css")
+        
+      link(rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128" href="src/images/favicon.ico")
+
+      = '\n'
+      <!-- build:css /src/css/style-min.css -->
+      <!-- inject:css -->
+      <!-- endinject -->
+      <!-- endbuild -->
+
+  body(class=page.modifier)
+    include ../_partials/_hud
+    
+    block template-body
+      p Basic template.
+
+    block template-foot
+      = '\n'
+      <!-- build:js /src/js/site-min.js -->
+      <!-- inject:js -->
+      <!-- endinject -->
+      <!-- endbuild -->

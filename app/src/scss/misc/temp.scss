@@ -1,0 +1,16 @@
+.Inverse {
+  color: white;
+  background-color: $primary--500;
+}
+
+body,
+a:hover,
+button:hover {
+  cursor: url("../images/cursor-default.png") 10 10, pointer;
+}
+
+body.Inverse,
+.Inverse a:hover,
+.Inverse button:hover {
+  cursor: url("../images/cursor-inverse-default.png") 10 10, pointer;
+}

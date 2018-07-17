@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "name": "About",
+      "href": "about.html"
+    },
+    {
+      "name": "Index",
+      "href": "index.html"
+    },
+    {
+      "name": "Shop",
+      "href": "https://linneaandast.tictail.com/",
+      "external": true
+    },
+    {
+      "name": "Instagram",
+      "href": "https://www.instagram.com/linneaandast/",
+      "external": true
+    },
+    {
+      "name": "Email",
+      "href": "mailto:linnea@and-ast.se"
+    }
+  ]
+}
