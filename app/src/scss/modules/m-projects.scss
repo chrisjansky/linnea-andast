@@ -1,4 +1,7 @@
 .m-projects {
+  position: relative;
+  z-index: 1000;
+  
   margin-top: 45vh;
   height: 100vh;
 
@@ -17,6 +20,7 @@
 
   &__frame {
     position: relative;
+
     flex-grow: 1;
   }
 
