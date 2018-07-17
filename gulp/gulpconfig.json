@@ -1,0 +1,47 @@
+{
+  "path": "./gulp/gulpconfig.json",
+  "dev": {
+    "root": "app/",
+
+    "pagesFormat": ".html",
+    "pagesFilter": "app/**/[^_]*.html",
+
+    "templatesRoot": "app/src/pug/",
+    "templatesPartial": "/src/pug",
+    "templatesFilter": "app/src/pug/**/[^_]*.pug",
+    "templatesGlob": "app/src/pug/**/*.pug",
+
+    "jsonGlobal": "app/src/pug/_data/global.json",
+
+    "stylesRoot": "app/src/scss/",
+    "stylesBase": "app/src/scss/*.scss",
+    "stylesGlob": "app/src/scss/**/*.scss",
+
+    "tempRoot": "app/src/temp/",
+
+    "imagesGlob": "app/src/images/**/*",
+
+    "svgSourceGlob": "app/src/svg/_source/*.svg",
+    "svgBuildGlob": "app/src/svg/*.svg",
+    "svgBuild": "app/src/svg/",
+
+    "jsBundle": "app/src/js/app.js"
+  },
+  "dist": {
+    "root": "dist/"
+  },
+  "move": [
+    "app/src/fonts/*",
+    "app/src/svg/*.svg"
+  ],
+  "assets": [
+    "node_modules/normalize.css/normalize.css",
+    "node_modules/flickity/dist/flickity.css",
+    "app/src/temp/style.css",
+
+    "node_modules/waypoints/lib/noframework.waypoints.js",
+    "node_modules/vanilla-lazyload/dist/lazyload.js",
+    "node_modules/flickity/dist/flickity.pkgd.js",
+    "app/src/temp/bundle.js"
+  ]
+}
