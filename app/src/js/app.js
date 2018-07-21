@@ -6,14 +6,17 @@ require('./modules/laa-scrollwatch.js')();
 
 var chjSmoothScroll = require('./modules/laa-smoothscroll');
 
+var slideActiveClass = "Slide--is-active";
 var sliderEl = document.querySelector("[data-slider]");
 if (sliderEl !== null) {
   var sliderObj = new Flickity("[data-slider]", {
     prevNextButtons: false,
     pageDots: false,
     setGallerySize: false,
-    lazyLoad: true
+    lazyLoad: 2,
+    autoPlay: 5000
   });
+  var prevSlide;
 
   sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
     /* Dismiss if cell was not clicked */
@@ -21,12 +24,27 @@ if (sliderEl !== null) {
       return;
     }
 
-    if (event.x > document.documentElement.clientWidth/2) {
+    if (pointer.pageX > document.documentElement.clientWidth/2) {
       sliderObj.next();
     } else {
       sliderObj.previous();
     }
   });
+
+  sliderObj.on( 'change' , function( index ) {
+    if (prevSlide !== undefined) {
+      prevSlide.getCellElements().forEach( function( cellElem ) {
+        cellElem.classList.remove(slideActiveClass);
+      });
+    }
+    prevSlide = sliderObj.slides[index];
+  });
+
+  sliderObj.on( 'settle', function( index ) {
+    sliderObj.slides[index].getCellElements().forEach( function( cellElem ) {
+      cellElem.classList.add(slideActiveClass);
+    });
+  })
 }
 
 /* Waypoints */

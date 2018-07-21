@@ -1,13 +1,23 @@
 .m-about {
   text-align: center;
-  font-size: 3.5vmax;
+  font-size: $font--700;
   font-weight: $font__serif--light;
   line-height: $leading--s;
-  letter-spacing: -.05em;
+  letter-spacing: -.025em;
+
+  @include media("≥tablet") {
+    font-size: $fluid--b;
+    letter-spacing: -.05em;
+  }
 
   &__content {
-    padding-top: 15vh;
+    padding-top: 15vmin;
     margin: $outer--b;
+
+    @include media("≥tablet") {
+      margin-left: $outer--m;
+      margin-right: $outer--m;
+    }
   }
 
   &__text {

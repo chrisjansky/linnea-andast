@@ -44,11 +44,18 @@
 }
 
 /*----- Classes ----- */
-@mixin masthead {
-  height: $masthead-height;
+@mixin hud-button {
+  padding-top: .5em;
 
-  white-space: nowrap;
-  overflow: hidden;
-  user-select: none;
-  pointer-events: none;
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+@mixin below-fold {
+  @include media("landscape") {
+    margin-top: 47.5vh;
+  }
+  @include media("portrait") {
+    margin-top: 52.5vh;
+  }
 }

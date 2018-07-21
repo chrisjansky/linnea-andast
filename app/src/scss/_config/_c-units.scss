@@ -1,20 +1,31 @@
 $leading--b:  1.5;
 $leading--s:  1.333;
 
-$fluid--b:    1.75vmax;
+$fluid--b:    3.5vmax;
 $fluid--s:    1.25vmax;
 
-$outer--b:    1.5rem;
+$outer--b:    1rem;
+$outer--m:    2rem;
 
-$masthead-height: 25vh;
+$masthead-height--landscape: 25vh;
+$masthead-height--portrait:  10vh;
 
-$duration--b: .25s;
-$duration--l: .5s;
+$duration--b:  .25s;
+$duration--l:  .5s;
+$duration--xl: 1s;
+
+$font--400: .875em;
+$font--500: 1em;
+$font--600: 1.25em;
+$font--700: 1.5em;
 
 $e__medium--out: cubic-bezier(0.165, 0.84, 0.44, 1); /* easeOutQuart */
 
 /* Breakpoints */
-$bp__phablet: 410px;
-$bp__tablet:  760px;
-$bp__laptop:  1008px;
-$bp__desktop: 1264px;
+$breakpoints: (
+  phablet: 560px,
+  tablet: 760px,
+  laptop: 1010px,
+  desktop: 1270px,
+  widescreen: 2000px
+);

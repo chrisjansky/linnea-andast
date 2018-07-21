@@ -1,4 +1,8 @@
 .m-top {
+  @include media("≥desktop") {
+    font-size: $fluid--s;
+  }
+
   display: flex;
   flex-direction: column;
 
@@ -25,10 +29,9 @@
     justify-content: space-between;
     padding: $outer--b;
 
-    font-size: $fluid--b;
     line-height: 1;
 
-    transition: opacity .5s $e__medium--out;
+    transition: opacity $duration--l;
 
     .Masthead--active & {
       opacity: 0;
@@ -37,7 +40,7 @@
   }
 
   &__link {
-    animation: fade 1s both;
+    animation: fade $duration--xl both;
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i + 1}) {

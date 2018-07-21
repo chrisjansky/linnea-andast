@@ -3,9 +3,7 @@ extends _templates/_site
 block template-body
   +hud("Index")
 
-  .m-masthead(data-waypoint="Masthead")
-    include ../svg/masthead.svg
-    include ../svg/masthead.svg
+  +masthead
   
   .m-top
     a.m-top__scroll(href="#work")
@@ -16,14 +14,25 @@ block template-body
           a.m-top__link(href=page.href target=page.external ? "_blank" : null)= page.name
   
   #work.m-projects(data-slider)
-    each artwork in [1, 2, 3, 4, 5, 6]
+    each project, index in projects
+      - var artwork = index + 1
       figure.m-projects__item
+        .m-projects__blankbutton &nbsp;
         .m-projects__frame
           img.m-projects__image(data-flickity-lazyload="src/images/temp/artwork-" + artwork + ".jpg")
         figcaption.m-projects__caption
-          if artwork == 2 || artwork == 5
+          unless project.untitled
             span.m-projects__info
-              h1.m-projects__title Black Monday
+              h1.m-projects__title: +dummy(Math.ceil(Math.random() * 4), "words")
               mark.m-projects__year 2018
-            strong.m-projects__media Silkscreen, 50&times;70 cm
-            a.m-projects__button(href="javascript:" target="_blank") Buy
+            if project.type
+              strong.m-projects__media
+                = project.type
+                | , 
+                = Math.ceil((Math.random() * 100) / 10) * 10
+                | &times;
+                = Math.ceil((Math.random() * 50) / 10) * 10
+                |  cm
+            if project.button
+              span.m-projects__action
+                a.m-projects__button(href="javascript:" target="_blank") Buy

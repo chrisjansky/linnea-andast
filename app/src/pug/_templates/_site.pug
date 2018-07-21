@@ -1,5 +1,5 @@
 block template-variables
-  - var page = {title: "Linnéa And-Ast", description: "", modifier: ""}
+  - var page = {title: "Linnéa And-Ast", description: ""}
 
 doctype
 html(lang="en")
@@ -21,8 +21,10 @@ html(lang="en")
       <!-- endinject -->
       <!-- endbuild -->
 
-  body(class=page.modifier)
+  body(class=modifier)
+    include ../_partials/_dummy
     include ../_partials/_hud
+    include ../_partials/_masthead
     
     block template-body
       p Basic template.

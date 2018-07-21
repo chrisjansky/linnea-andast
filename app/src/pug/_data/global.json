@@ -22,5 +22,27 @@
       "name": "Email",
       "href": "mailto:linnea@and-ast.se"
     }
+  ],
+  "projects": [
+    {
+      "type": "Collage",
+      "button": true
+    },
+    {
+      "untitled": true
+    },
+    {
+      "type": "Oil Painting"
+    },
+    {
+      "type": "Silkscreen",
+      "button": true
+    },
+    {
+      "untitled": true
+    },
+    {
+      "untitled": false
+    }
   ]
 }

@@ -1,10 +1,14 @@
 .m-masthead {
-  @include masthead;
+  @include media("≥desktop") {
+    font-size: $fluid--s;
+  }
+
   position: sticky;
-  top: 3rem;
+  top: .5rem;
   z-index: 0;
 
-  margin-top: 30vh;
+  user-select: none;
+  pointer-events: none;
 
   transition: color .25s $e__medium--out 0s, z-index 0s $e__medium--out .25s;
 
@@ -15,5 +19,29 @@
   }
   .Inverse.Hud--is-active & {
     color: $primary--500;
+  }
+
+  @include media("landscape") {
+    margin-top: 27.5vh;
+  }
+  @include media("portrait") {
+    margin-top: 37.5vh;
+  }
+
+  &__blankbutton {
+    @include hud-button;
+    visibility: hidden;
+  }
+
+  &__content {
+    @include media("portrait") {
+      height: $masthead-height--portrait;
+    }
+    @include media("landscape") {
+      height: $masthead-height--landscape;
+    }
+
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

@@ -1,16 +1,31 @@
+html {
+  @include media("≥desktop", "<widescreen") {
+    font-size: 1.25em;
+  }
+  @include media("≥widescreen") {
+    font-size: 1.5em;
+  }
+}
+
 .Inverse {
   color: white;
   background-color: $primary--500;
 }
 
-body,
-a:hover,
-button:hover {
-  cursor: url("../images/cursor-default.png") 10 10, pointer;
-}
-
 body.Inverse,
 .Inverse a:hover,
-.Inverse button:hover {
+.Inverse button:hover,
+.Hud--is-active .m-hud,
+.Hud--is-active .m-hud a:hover,
+.Hud--is-active .m-hud button:hover {
   cursor: url("../images/cursor-inverse-default.png") 10 10, pointer;
+}
+
+body,
+a:hover,
+button:hover,
+.Inverse .m-hud,
+.Inverse .m-hud a:hover,
+.Inverse .m-hud button:hover {
+  cursor: url("../images/cursor-default.png") 10 10, pointer;
 }

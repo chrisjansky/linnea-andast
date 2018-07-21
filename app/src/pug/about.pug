@@ -1,15 +1,13 @@
 extends _templates/_site
 
 append template-variables
-  - var page = {modifier: "Inverse"}
+  - var modifier = "Inverse"
 
 block template-body
   +hud("About")
 
   .m-constraint
-    .m-masthead(data-waypoint="Masthead")
-      include ../svg/masthead.svg
-      include ../svg/masthead.svg
+    +masthead
     .m-constraint__holder
       img.m-constraint__portrait(data-src="src/images/temp/about-portrait-2.jpg" alt="Portrait")
   

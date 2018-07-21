@@ -1,9 +1,14 @@
 .m-projects {
   position: relative;
   z-index: 1000;
-  
-  margin-top: 45vh;
+
   height: 100vh;
+
+  @include below-fold;
+
+  @include media("≥desktop") {
+    font-size: $fluid--s;
+  }
 
   &__item {
     width: 100vw;
@@ -15,11 +20,18 @@
     box-sizing: border-box;
 
     margin: 0;
-    padding-top: #{$fluid--b * 1.75}; /* .m-hud__toggle height */
+  }
+
+  &__blankbutton {
+    @include hud-button;
+    visibility: hidden;
+
+    margin-bottom: .5rem;
   }
 
   &__frame {
     position: relative;
+    margin: 0 .5rem;
 
     flex-grow: 1;
   }
@@ -42,34 +54,74 @@
 
   &__caption {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    font-size: $fluid--s;
+    font-size: $font--400;
 
-    height: 3em;
+    padding: $outer--b;
+    margin: -.25rem;
+    line-height: 1;
+
+    & > * {
+      transition: opacity $duration--l;
+      opacity: 0;
+
+      text-align: center;
+      margin: .25rem;
+    }
+
+    & > :first-child {
+      text-align: left;
+    }
+    & > :last-child {
+      text-align: right;
+    }
+
+    @include media("≥tablet") {
+      justify-content: space-between;
+
+      font-size: 1em;
+
+      & > * {
+        flex: 1 0 10em;
+      }
+    }
+
+    .Slide--is-active & > * {
+      opacity: 1;
+    }
+    @for $i from 1 through 2 {
+      .Slide--is-active & > :nth-child(#{$i + 1}) {
+        transition-delay: $i * .125s;
+      }
+    }
   }
 
   &__info {
-    display: flex;
-    align-items: center;
+    &:only-child {
+      text-align: center;
+    }
   }
 
   &__title {
+    display: inline;
+
     margin: 0;
     font-size: 1em;
     font-weight: $font__serif--regular;
   }
 
   &__year {
-    margin-left: .25em;
+    position: relative;
+    top: .05em; /* Optical align */
+
     font-feature-settings: "ss04";
   }
 
   &__media {
     font-weight: $font__serif--regular;
-
-    margin: 0 2em;
   }
 
   &__button {

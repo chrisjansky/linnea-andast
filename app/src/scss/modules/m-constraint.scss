@@ -3,9 +3,18 @@
     position: relative;
     z-index: -1;
 
-    height: 100vh;
-    margin: 45vh $outer--b 0;
-    border-bottom: #{$masthead-height/3} solid transparent;
+    margin: 0 $outer--b;
+
+    @include below-fold;
+
+    @include media("portrait") {
+      padding-bottom: 62.5%;
+      border-bottom: #{$masthead-height--portrait/3} solid transparent;
+    }
+    @include media("landscape") {
+      height: 100vh;
+      border-bottom: #{$masthead-height--landscape/3} solid transparent;
+    }
   }
 
   &__portrait {
