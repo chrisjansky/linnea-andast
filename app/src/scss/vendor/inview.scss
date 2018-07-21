@@ -1,0 +1,23 @@
+[data-appear] {
+  transition: opacity $duration--xl;
+}
+
+[data-appear="normal"] {
+  opacity: 0;
+
+  &.is--in-view {
+    opacity: 1;
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i + 1}) {
+      transition-delay: $i * .125s;
+    }
+  }
+}
+
+[data-appear="image"] {
+  &.is--in-view.loaded {
+    opacity: 1;
+  }
+}

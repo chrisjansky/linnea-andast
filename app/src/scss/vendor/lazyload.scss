@@ -4,7 +4,7 @@
   transition: opacity $duration--l;
 }
 
-img.loaded {
+img.loaded:not([data-appear]) {
   opacity: 1;
 }
 

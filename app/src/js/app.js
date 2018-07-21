@@ -3,6 +3,7 @@ require('smoothscroll-polyfill').polyfill();
 require('./modules/laa-lazyload.js')();
 require('./modules/laa-toggle.js')();
 require('./modules/laa-scrollwatch.js')();
+require('./modules/laa-inview.js')();
 
 var chjSmoothScroll = require('./modules/laa-smoothscroll');
 

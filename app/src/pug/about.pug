@@ -9,7 +9,7 @@ block template-body
   .m-constraint
     +masthead
     .m-constraint__holder
-      img.m-constraint__portrait(data-src="src/images/temp/about-portrait-2.jpg" alt="Portrait")
+      img.m-constraint__portrait(data-appear="image" data-src="src/images/temp/about-portrait-2.jpg" alt="Portrait")
   
   .m-top
     a.m-top__scroll(href="#about")
@@ -21,38 +21,38 @@ block template-body
 
   #about.m-about
     .m-about__content
-      p.m-about__text Visual artist &amp; illustrator, based in Gothenburg #[span.m-about__super (SE)], b.&nbsp;#[span.m-about__born 1989]
+      p.m-about__text(data-appear="normal") Visual artist &amp; illustrator, based in Gothenburg #[span.m-about__super (SE)], b.&nbsp;#[span.m-about__born 1989]
 
-      h1.m-about__title ( Exhibitions )
+      h1.m-about__title(data-appear="normal") ( Exhibitions )
       ul.m-about__list
         li
-          strong.m-about__year 2018
+          strong.m-about__year(data-appear="normal") 2018
           ul.m-about__bulletlist
-            li OSLO Art Oslo
-            li STOCKHOLM Affordable Art Fair
+            li(data-appear="normal") OSLO Art Oslo
+            li(data-appear="normal") STOCKHOLM Affordable Art Fair
         li
-          strong.m-about__year 2017
+          strong.m-about__year(data-appear="normal") 2017
           ul.m-about__bulletlist
-            li COPENHAGEN Oxholm Gallery
-            li BEIJING Royal Scandinavia
-            li SAN FRANCISCO 111 Minna Gallery
+            li(data-appear="normal") COPENHAGEN Oxholm Gallery
+            li(data-appear="normal") BEIJING Royal Scandinavia
+            li(data-appear="normal") SAN FRANCISCO 111 Minna Gallery
         li
-          strong.m-about__year 2016
+          strong.m-about__year(data-appear="normal") 2016
           ul.m-about__bulletlist
-            li MILAN Affogato Fair
+            li(data-appear="normal") MILAN Affogato Fair
 
-      h1.m-about__title ( Clients )
+      h1.m-about__title(data-appear="normal") ( Clients )
       ul.m-about__bulletlist
-        li Ikea
-        li Marimekko
-        li Artilleriet
-        li Monki
-        li Slowdown Studio
+        li(data-appear="normal") Ikea
+        li(data-appear="normal") Marimekko
+        li(data-appear="normal") Artilleriet
+        li(data-appear="normal") Monki
+        li(data-appear="normal") Slowdown Studio
 
-      h1.m-about__title ( Press )
+      h1.m-about__title(data-appear="normal") ( Press )
       ul.m-about__bulletlist
-        li: a(href="javascript:") INTERVIEW Ballpit Magazine
-        li: a(href="javascript:") INTERVIEW Ikea
-        li: a(href="javascript:") INTERVIEW Artistmag
+        li(data-appear="normal"): a(href="javascript:") INTERVIEW Ballpit Magazine
+        li(data-appear="normal"): a(href="javascript:") INTERVIEW Ikea
+        li(data-appear="normal"): a(href="javascript:") INTERVIEW Artistmag
 
-      small.o-author Website by #[a(href="https://christianjansky.name") Christian Jánský]
+      small.o-author(data-appear="normal") Website by #[a(href="https://christianjansky.name") Christian Jánský]
