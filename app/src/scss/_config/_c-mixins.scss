@@ -59,3 +59,15 @@
     margin-top: 52.5vh;
   }
 }
+
+@mixin bullet {
+  display: inline-block;
+  content: "";
+  width: .65em;
+  height: .65em;
+
+  margin-left: .125em;
+  margin-right: .25em;
+  border-radius: 50%;
+  background-color: currentColor;
+}

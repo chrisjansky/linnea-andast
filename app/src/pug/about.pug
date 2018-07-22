@@ -54,5 +54,14 @@ block template-body
         li(data-appear="normal"): a(href="javascript:") INTERVIEW Ballpit Magazine
         li(data-appear="normal"): a(href="javascript:") INTERVIEW Ikea
         li(data-appear="normal"): a(href="javascript:") INTERVIEW Artistmag
+      
+      .m-contact
+        each page in pages
+          unless page.name == "About" || page.name == "Index"
+            unless page.name == "Shop"
+              span.m-contact__bullet(data-appear="normal")
+            a.m-contact__link(href=page.href target=page.external ? "_blank" : null data-appear="normal")= page.name
+              if page.name == "Email"
+                include ../svg/button-diamond.svg
 
       small.o-author(data-appear="normal") Website by #[a(href="https://christianjansky.name") Christian Jánský]
