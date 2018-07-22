@@ -71,3 +71,10 @@
   border-radius: 50%;
   background-color: currentColor;
 }
+
+@mixin word {
+  display: inline-block;
+  height: 100%;
+
+  animation: pan 20s linear infinite both;
+}

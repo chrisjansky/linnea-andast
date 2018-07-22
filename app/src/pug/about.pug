@@ -10,6 +10,7 @@ block template-body
     +masthead
     .m-constraint__holder
       img.m-constraint__portrait(data-appear="image" data-src="src/images/temp/about-portrait-2.jpg" alt="Portrait")
+    .m-constraint__pad
   
   .m-top
     a.m-top__scroll(href="#about")
@@ -63,5 +64,12 @@ block template-body
             a.m-contact__link(href=page.href target=page.external ? "_blank" : null data-appear="normal")= page.name
               if page.name == "Email"
                 include ../svg/button-diamond.svg
+  
+  .m-back
+    a.m-back__link(href="index.html" data-appear="normal")
+      each word in [1, 2, 3]
+        span.m-back__word
+          include ../svg/back.svg
 
-      small.o-author(data-appear="normal") Website by #[a(href="https://christianjansky.name") Christian Jánský]
+    .m-back__footer
+      small.o-author(data-appear="normal") Website by #[a(href="https://christianjansky.name" target="_blank") Christian Jánský]

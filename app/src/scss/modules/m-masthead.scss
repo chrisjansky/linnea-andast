@@ -44,4 +44,10 @@
     white-space: nowrap;
     overflow: hidden;
   }
+
+  &__word {
+    @include word;
+
+    padding: 0 3vmax;
+  }
 }
