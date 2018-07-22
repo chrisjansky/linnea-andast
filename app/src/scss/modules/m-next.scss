@@ -1,4 +1,8 @@
 .m-next {
+  @include media("≥desktop") {
+    font-size: $fluid--s;
+  }
+  
   position: fixed;
   top: 0;
   left: 0;

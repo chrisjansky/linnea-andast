@@ -1,4 +1,8 @@
 .m-back {
+  @include media("≥desktop") {
+    font-size: $fluid--s;
+  }
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
