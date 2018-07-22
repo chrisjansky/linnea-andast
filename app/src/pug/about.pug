@@ -56,20 +56,23 @@ block template-body
         li(data-appear="normal"): a(href="javascript:") INTERVIEW Ikea
         li(data-appear="normal"): a(href="javascript:") INTERVIEW Artistmag
       
-      .m-contact
+      .m-about__contact.o-contact
         each page in pages
           unless page.name == "About" || page.name == "Index"
             unless page.name == "Shop"
-              span.m-contact__bullet(data-appear="normal")
-            a.m-contact__link(href=page.href target=page.external ? "_blank" : null data-appear="normal")= page.name
+              span.o-contact__bullet(data-appear="normal")
+            a.o-contact__link(href=page.href target=page.external ? "_blank" : null data-appear="normal")= page.name
               if page.name == "Email"
                 include ../svg/button-diamond.svg
   
   .m-back
-    a.m-back__link(href="index.html" data-appear="normal")
+    a.m-back__link(href="index.html" data-appear="stagger")
       each word in [1, 2, 3]
-        span.m-back__word
-          include ../svg/back.svg
+        span.m-back__word(data-appear-group)
+          span.m-back__text(data-appear-child)
+            include ../svg/word-index.svg
+          span.m-back__arrow(data-appear-child)
+            include ../svg/arrow-left.svg
 
     .m-back__footer
       small.o-author(data-appear="normal") Website by #[a(href="https://christianjansky.name" target="_blank") Christian Jánský]

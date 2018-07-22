@@ -36,3 +36,23 @@ block template-body
             if project.button
               span.m-projects__action
                 a.m-projects__button(href="javascript:" target="_blank") Buy
+    
+    .m-next
+      .m-next__top
+        .m-next__blankbutton &nbsp;
+        a.m-next__link(href="about.html")
+          each word in [1, 2, 3]
+            span.m-next__word
+              span.m-next__text
+                include ../svg/word-about.svg
+              span.m-next__arrow
+                include ../svg/arrow-right.svg
+      
+      .m-next__contact.o-contact
+        each page in pages
+          unless page.name == "About" || page.name == "Index"
+            unless page.name == "Shop"
+              span.o-contact__bullet
+            a.o-contact__link(href=page.href target=page.external ? "_blank" : null)= page.name
+              if page.name == "Email"
+                include ../svg/button-diamond.svg

@@ -1,6 +1,4 @@
 .m-back {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +12,6 @@
   }
 
   &__link {
-    display: block;
     padding-bottom: 5vh;
 
     white-space: nowrap;
@@ -28,23 +25,14 @@
   }
 
   &__word {
-    position: relative;
-    padding: 0 1.5vmax;
-
     @include word;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 110%;
-      left: 32.5%;
-      right: 1.5vmax;
-
-      height: .5em;
-    }
   }
-  &__link:hover &__word:after,
-  &__link:active &__word:after {
+
+  &__text {
+    @include text;
+  }
+  &__link:hover &__text:after,
+  &__link:active &__text:after {
     background-color: currentColor;
   }
 

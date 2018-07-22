@@ -10,7 +10,7 @@
   user-select: none;
   pointer-events: none;
 
-  transition: color .25s $e__medium--out 0s, z-index 0s $e__medium--out .25s;
+  transition: color .25s 0s, z-index 0s .25s, opacity $duration--l $duration--l;
 
   .Hud--is-active & {
     color: white;
@@ -19,6 +19,10 @@
   }
   .Inverse.Hud--is-active & {
     color: $primary--500;
+  }
+  .Slider--end & {
+    opacity: 0;
+    transition-delay: 0s;
   }
 
   @include media("landscape") {

@@ -1,0 +1,63 @@
+.m-next {
+  position: relative;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__blankbutton {
+    @include hud-button;
+    visibility: hidden;
+  }
+
+  &__link {
+    display: block;
+    margin-top: .5rem;
+    padding-bottom: 5vh;
+
+    white-space: nowrap;
+
+    @include media("portrait") {
+      height: $masthead-height--portrait;
+    }
+    @include media("landscape") {
+      height: $masthead-height--landscape;
+    }
+  }
+
+  &__word {
+    @include word("reverse");
+
+    & > * {
+      transition: opacity $duration--l;
+      opacity: 0;
+
+      .Slider--end & { opacity: 1; }
+    }
+
+    @for $i from 0 through 2 {
+      @for $y from 0 through 1 {
+        .Slider--end &:nth-child(#{$i+1}) > :nth-child(#{$y+1}) {
+          transition-delay: #{.25s + $i * .25s + $y * .125s};
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &__link:hover &__text:after,
+  &__link:active &__text:after {
+    background-color: currentColor;
+  }
+
+  &__contact {
+    padding: $outer--b;
+  }
+}

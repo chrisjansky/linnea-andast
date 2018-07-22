@@ -72,9 +72,28 @@
   background-color: currentColor;
 }
 
-@mixin word {
+@mixin word($direction: "") {
   display: inline-block;
   height: 100%;
 
   animation: pan 20s linear infinite both;
+
+  @if $direction == "reverse" {
+    animation-direction: reverse;
+  }
+}
+
+@mixin text {
+  position: relative;
+  margin: 0 3vmax;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: 0;
+    right: 0;
+
+    height: .625em;
+  }
 }

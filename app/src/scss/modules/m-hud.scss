@@ -19,7 +19,7 @@
     transform: translateY(-100%);
     visibility: hidden;
 
-    transition: transform .5s $e__medium--out .25s, visibility 0s $e__medium--out .75s;
+    transition: transform $duration--l $e__medium--out .25s, visibility 0s .75s;
 
     .Hud--is-active & {
       transform: translateY(0%);
@@ -51,9 +51,10 @@
 
     font-feature-settings: "c2sc";
 
-    transition: .5s $e__medium--out;
+    transition: $duration--l $e__medium--out;
 
-    body:not(.Masthead--active) & {
+    body:not(.Masthead--active) &,
+    .Slider--end & {
       opacity: 0;
       pointer-events: none;
     }
