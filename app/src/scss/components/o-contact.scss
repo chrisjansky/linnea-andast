@@ -5,24 +5,8 @@
 
   &__link {
     padding: .25em .75em;
+    border-radius: 1.25em;
     border: .05em solid currentColor;
-
-    &:first-child {
-      padding-left: .5em;
-      padding-right: .5em;
-    }
-
-    &:nth-child(3) {
-      border-radius: 1.25em;
-    }
-
-    &:last-child {
-      position: relative;
-      border: 0;
-
-      padding-left: 1em;
-      padding-right: 1em;
-    }
   }
 
   &__bullet {
