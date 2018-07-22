@@ -28,6 +28,12 @@ module.exports = function() {
         if (sliderEnd) {
           document.body.classList.toggle("Slider--end", direction == "down");
         }
+
+        if (direction == "down") {
+          window.sliderObj.unpausePlayer();
+        } else {
+          window.sliderObj.pausePlayer();
+        }
       }
     });
   }

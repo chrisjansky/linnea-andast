@@ -18,6 +18,7 @@ if (sliderEl !== null) {
     lazyLoad: 2,
     autoPlay: 5000
   });
+  window.sliderObj.pausePlayer();
   var prevSlide;
 
   window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
