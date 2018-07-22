@@ -91,6 +91,10 @@
 
     margin-top: .125em;
     padding: $outer--b;
+
+    @include media("≥laptop") {
+      margin: .75em 0 .5em;
+    }
   }
 
   &__link {
