@@ -9,6 +9,18 @@ module.exports = function() {
       classSplit.forEach(function(value) {
         document.body.classList.toggle(value + "--is-active");
       });
+
+      if (classAttr == "Hud") {
+        var hudOpened = document.body.classList.contains("Hud--is-active");
+
+        if (window.sliderObj !== undefined) {
+          if (hudOpened) {
+            window.sliderObj.pausePlayer();
+          } else {
+            window.sliderObj.unpausePlayer();
+          }
+        }
+      }
     }
   }
 }
