@@ -49,9 +49,27 @@
     overflow: hidden;
   }
 
-  &__word {
-    @include word;
+  &__group {
+    @include word-group;
 
     padding: 0 3vmax;
+  }
+
+  @at-root [class^="m-masthead__part"],
+  [class*="m-masthead__part"] {
+    animation: fade $duration--xl both;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: .25s + $i * .125s;
+      }
+    }
+  }
+
+  &__part--linnea {
+    padding-right: 4vmax;
+  }
+  &__part--and {
+    padding-right: 2vmax;
   }
 }

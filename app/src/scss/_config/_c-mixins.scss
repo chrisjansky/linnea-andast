@@ -72,7 +72,7 @@
   background-color: currentColor;
 }
 
-@mixin word($direction: "") {
+@mixin word-group($direction: "") {
   display: inline-block;
   height: 100%;
 
