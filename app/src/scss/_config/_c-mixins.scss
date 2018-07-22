@@ -94,6 +94,11 @@
     left: 0;
     right: 0;
 
-    height: .625em;
+    @include media("portrait") {
+      height: .375em;
+    }
+    @include media("landscape") {
+      height: .625em;
+    }
   }
 }

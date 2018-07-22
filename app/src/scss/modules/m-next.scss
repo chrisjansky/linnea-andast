@@ -1,13 +1,15 @@
 .m-next {
-  position: relative;
-  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-  width: 100vw;
-  height: 100vh;
+  pointer-events: none;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  .Slider--end & {
+    z-index: 2000;
+    pointer-events: auto;
+  }
 
   &__blankbutton {
     @include hud-button;
@@ -55,9 +57,5 @@
   &__link:hover &__text:after,
   &__link:active &__text:after {
     background-color: currentColor;
-  }
-
-  &__contact {
-    padding: $outer--b;
   }
 }

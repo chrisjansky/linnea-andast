@@ -4,14 +4,14 @@ require('./modules/laa-lazyload.js')();
 require('./modules/laa-toggle.js')();
 require('./modules/laa-scrollwatch.js')();
 require('./modules/laa-inview.js')();
+require('./modules/laa-waypoints.js')();
 
 var chjSmoothScroll = require('./modules/laa-smoothscroll');
 
 var slideActiveClass = "Slide--is-active";
 var sliderEl = document.querySelector("[data-slider]");
-var sliderObj;
 if (sliderEl !== null) {
-  sliderObj = new Flickity("[data-slider]", {
+  window.sliderObj = new Flickity("[data-slider]", {
     prevNextButtons: false,
     pageDots: false,
     setGallerySize: false,
@@ -20,21 +20,21 @@ if (sliderEl !== null) {
   });
   var prevSlide;
 
-  sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
+  window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
     /* Dismiss if cell was not clicked */
     if ( !cellElement ) {
       return;
     }
 
     if (pointer.pageX > document.documentElement.clientWidth/2) {
-      sliderObj.next();
+      window.sliderObj.next();
     } else {
-      sliderObj.previous();
+      window.sliderObj.previous();
     }
   });
 
-  sliderObj.on( 'change' , function( index ) {
-    var isLast = index == sliderObj.cells.length - 1;
+  window.sliderObj.on( 'change' , function( index ) {
+    var isLast = index == window.sliderObj.cells.length - 1;
     document.body.classList.toggle("Slider--end", isLast);
 
     if (prevSlide !== undefined) {
@@ -42,32 +42,12 @@ if (sliderEl !== null) {
         cellElem.classList.remove(slideActiveClass);
       });
     }
-    prevSlide = sliderObj.slides[index];
+    prevSlide = window.sliderObj.slides[index];
   });
 
-  sliderObj.on( 'settle', function( index ) {
-    sliderObj.slides[index].getCellElements().forEach( function( cellElem ) {
+  window.sliderObj.on( 'settle', function( index ) {
+    window.sliderObj.slides[index].getCellElements().forEach( function( cellElem ) {
       cellElem.classList.add(slideActiveClass);
     });
   })
 }
-
-/* Waypoints */
-var waypointObj = document.querySelectorAll("[data-waypoint]");
-waypointObj.forEach(function(instance, index) {
-  new Waypoint({
-    element: instance,
-    handler: function(direction) {
-      document.body.classList.toggle(this.element.dataset.waypoint + "--active", direction == "down");
-    }
-  })
-});
-
-new Waypoint({
-  element: document.querySelector("[data-waypoint='Masthead']"),
-  handler: function(direction) {
-    if (direction == "up") {
-      document.body.classList.remove("Hud--is-active");
-    }
-  }
-});
