@@ -152,5 +152,20 @@
 
   &__contact {
     padding: $outer--b;
+
+    & > * {
+      transition: opacity $duration--l;
+      opacity: 0;
+
+      .Slider--end & {
+        opacity: 1;
+      }
+
+      @for $i from 0 through 4 {
+        .Slider--end &:nth-child(#{$i+1}) {
+          transition-delay: #{.25s + $i * .125s};
+        }
+      }
+    }
   }
 }
