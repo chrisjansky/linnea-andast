@@ -8,7 +8,7 @@ mixin hud(slug)
 
     .m-hud__content
       .m-hud__blankbutton &nbsp;
-      .m-hud__stamp
+      +logo("m-hud__logo")
 
       nav.m-hud__pages
         each page in pages

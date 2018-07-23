@@ -2,14 +2,4 @@ mixin masthead
   .m-masthead(data-waypoint="Masthead")
     .m-masthead__blankbutton &nbsp;
 
-    .m-masthead__content
-      each group in [1, 2]
-        span.m-masthead__group
-          span.m-masthead__part--linnea
-            include ../../svg/logo-linnea.svg
-          span.m-masthead__part--and
-            include ../../svg/logo-and.svg
-          span.m-masthead__part--hyphen
-            include ../../svg/logo-hyphen.svg
-          span.m-masthead__part--ast
-            include ../../svg/logo-ast.svg
+    +logo("m-masthead__content")

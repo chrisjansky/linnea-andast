@@ -1,0 +1,12 @@
+mixin logo(modifier)
+  .o-logo(class=modifier)
+    each group in [1, 2]
+      span.o-logo__group
+        span.o-logo__part--linnea
+          include ../../svg/logo-linnea.svg
+        span.o-logo__part--and
+          include ../../svg/logo-and.svg
+        span.o-logo__part--hyphen
+          include ../../svg/logo-hyphen.svg
+        span.o-logo__part--ast
+          include ../../svg/logo-ast.svg

@@ -1,0 +1,52 @@
+.o-logo {
+  @include media("portrait") {
+    height: $masthead-height--portrait;
+  }
+  @include media("landscape") {
+    height: $masthead-height--landscape;
+  }
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  &__group {
+    @include word-group;
+
+    padding: 0 3vmax;
+  }
+
+  @at-root [class^="o-logo__part"],
+  [class*="o-logo__part"] {
+    animation: fade $duration--xl backwards;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: .25s + $i * .125s;
+      }
+    }
+  }
+
+  &__part--linnea {
+    padding-right: 4vmax;
+  }
+  &__part--and {
+    padding-right: 2vmax;
+  }
+}
+
+/* Hud Variant */
+.m-hud [class^="o-logo__part"],
+.m-hud [class*="o-logo__part"] {
+  transition: opacity $duration--xl;
+  opacity: 0;
+
+  .Hud--is-active & {
+    opacity: 1;
+  }
+
+  @for $i from 1 through 4 {
+    .Hud--is-active &:nth-child(#{$i}) {
+      transition-delay: .25s + $i * .125s;
+    }
+  }
+}

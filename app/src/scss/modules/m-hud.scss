@@ -74,15 +74,8 @@
     display: none;
   }
 
-  &__stamp {
+  &__logo {
     margin-top: .5rem;
-
-    @include media("portrait") {
-      height: $masthead-height--portrait;
-    }
-    @include media("landscape") {
-      height: $masthead-height--landscape;
-    }
   }
 
   &__pages {

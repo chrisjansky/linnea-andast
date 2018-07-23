@@ -10,11 +10,10 @@
   user-select: none;
   pointer-events: none;
 
-  transition: color .25s 0s, z-index 0s .25s, opacity $duration--l $duration--l;
+  transition: color .25s 0s, opacity $duration--l $duration--l;
 
   .Hud--is-active & {
     color: white;
-    z-index: 10000;
     transition-delay: .125s;
   }
   .Inverse.Hud--is-active & {
@@ -35,41 +34,5 @@
   &__blankbutton {
     @include hud-button;
     visibility: hidden;
-  }
-
-  &__content {
-    @include media("portrait") {
-      height: $masthead-height--portrait;
-    }
-    @include media("landscape") {
-      height: $masthead-height--landscape;
-    }
-
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  &__group {
-    @include word-group;
-
-    padding: 0 3vmax;
-  }
-
-  @at-root [class^="m-masthead__part"],
-  [class*="m-masthead__part"] {
-    animation: fade $duration--xl both;
-
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation-delay: .25s + $i * .125s;
-      }
-    }
-  }
-
-  &__part--linnea {
-    padding-right: 4vmax;
-  }
-  &__part--and {
-    padding-right: 2vmax;
   }
 }
