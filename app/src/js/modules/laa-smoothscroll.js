@@ -1,5 +1,5 @@
 module.exports = {
-  attach: (function instance() {
+  init: (function instance() {
     var links = document.querySelectorAll('[href^="#"]');
 
     for(var i = 0; i < links.length; i++) {

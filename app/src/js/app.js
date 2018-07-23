@@ -1,10 +1,58 @@
 require('smoothscroll-polyfill').polyfill();
 
-require('./modules/laa-flickity.js')();
-require('./modules/laa-lazyload.js')();
-require('./modules/laa-toggle.js')();
-require('./modules/laa-scrollwatch.js')();
-require('./modules/laa-inview.js')();
-require('./modules/laa-waypoints.js')();
+/* Store for later and initialize inside */
+var
+  laaFlickity = require('./modules/laa-flickity'),
+  laaLazy = require('./modules/laa-lazyload'),
+  laaToggle = require('./modules/laa-toggle'),
+  laaSmoothScroll = require('./modules/laa-smoothscroll'),
+  laaInview = require('./modules/laa-inview'),
+  laaWaypoints = require('./modules/laa-waypoints');
 
-var chjSmoothScroll = require('./modules/laa-smoothscroll');
+Barba.Pjax.start();
+Barba.Prefetch.init();
+
+var barbaClicked = false;
+
+Barba.Dispatcher.on("linkClicked", function() {
+  barbaClicked = true;
+});
+
+addEventListener("popstate", function (event) {
+  barbaClicked = false;
+});
+
+/* Event based here */
+Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container, newPageRawHTML) {
+  /* Update body class according to fetched page */
+  let regexp = /\<body.*\sclass=["'](.+?)["'].*\>/gi,
+      match = regexp.exec(newPageRawHTML);
+  if(!match || !match[1]) return;
+  document.body.setAttribute("class", match[1]);
+
+  laaLazy.init();
+  laaToggle.init();
+  laaSmoothScroll.init();
+  laaInview.init();
+});
+
+/* Direct DOM manupulation here */
+Barba.Dispatcher.on("transitionCompleted", function() {
+  /* Destroy previous flickity.player if exists */
+  if (window.sliderObj !== undefined) {
+    window.sliderObj.stopPlayer();
+  }
+  laaFlickity.init();
+
+  /* Destroy previous Waypoints */
+  Waypoint.destroyAll()
+  laaWaypoints.init();
+
+  /* Don't change scroll position if back button pressed */
+  if (barbaClicked) {
+    window.scroll({
+      top: 0,
+      behaviour: "smooth"
+    });
+  }
+});

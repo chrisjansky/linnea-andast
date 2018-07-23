@@ -43,6 +43,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "barba.js": "^1.0.0",
     "flickity": "^2.1.2",
     "in-view": "^0.6.1",
     "include-media": "^1.4.9",

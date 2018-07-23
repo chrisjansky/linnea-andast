@@ -39,6 +39,7 @@
     "node_modules/flickity/dist/flickity.css",
     "app/src/temp/style.css",
 
+    "node_modules/barba.js/dist/barba.js",
     "node_modules/waypoints/lib/noframework.waypoints.js",
     "node_modules/vanilla-lazyload/dist/lazyload.js",
     "node_modules/in-view/dist/in-view.min.js",
