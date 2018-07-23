@@ -24,13 +24,6 @@
     transition-delay: 0s;
   }
 
-  @include media("landscape") {
-    margin-top: 27.5vh;
-  }
-  @include media("portrait") {
-    margin-top: 37.5vh;
-  }
-
   &__blankbutton {
     @include hud-button;
     visibility: hidden;
