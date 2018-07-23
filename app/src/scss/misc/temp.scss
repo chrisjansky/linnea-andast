@@ -24,8 +24,8 @@ body.Inverse,
 body,
 a:hover,
 button:hover,
-.Inverse .m-hud,
-.Inverse .m-hud a:hover,
-.Inverse .m-hud button:hover {
+.Inverse.Hud--is-active .m-hud,
+.Inverse.Hud--is-active .m-hud a:hover,
+.Inverse.Hud--is-active .m-hud button:hover {
   cursor: url("../images/cursor-default.png") 10 10, pointer;
 }
