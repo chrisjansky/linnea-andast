@@ -10,6 +10,7 @@ module.exports = {
         lazyLoad: 2,
         autoPlay: 5000
       });
+      window.sliderObj.focus();
       window.sliderObj.pausePlayer();
 
       window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
