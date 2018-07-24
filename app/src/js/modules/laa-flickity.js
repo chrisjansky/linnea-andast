@@ -1,5 +1,3 @@
-var slideActiveClass = "Slide--is-active";
-
 module.exports = {
   init: (function instance() {
     var sliderEl = document.querySelector("[data-slider]");
@@ -13,7 +11,6 @@ module.exports = {
         autoPlay: 5000
       });
       window.sliderObj.pausePlayer();
-      var prevSlide;
 
       window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
         /* Dismiss if cell was not clicked */
@@ -30,21 +27,10 @@ module.exports = {
 
       window.sliderObj.on( 'change' , function( index ) {
         var isLast = index == window.sliderObj.cells.length - 1;
-        document.body.classList.toggle("Slider--end", isLast);
-
-        if (prevSlide !== undefined) {
-          prevSlide.getCellElements().forEach( function( cellElem ) {
-            cellElem.classList.remove(slideActiveClass);
-          });
+        if (document.body.classList.contains("Masthead--active")) {
+          document.body.classList.toggle("Slider--end", isLast);
         }
-        prevSlide = window.sliderObj.slides[index];
       });
-
-      window.sliderObj.on( 'settle', function( index ) {
-        window.sliderObj.slides[index].getCellElements().forEach( function( cellElem ) {
-          cellElem.classList.add(slideActiveClass);
-        });
-      })
     }
 
     /* Return to make later calls possible */

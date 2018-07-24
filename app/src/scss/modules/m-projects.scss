@@ -96,12 +96,12 @@
       }
     }
 
-    .Slide--is-active & > * {
+    .is-selected & > * {
       opacity: 1;
     }
-    @for $i from 1 through 2 {
-      .Slide--is-active & > :nth-child(#{$i + 1}) {
-        transition-delay: $i * .125s;
+    @for $i from 1 through 3 {
+      .is-selected & > :nth-child(#{$i}) {
+        transition-delay: .25s + $i * .125s;
       }
     }
   }
@@ -141,12 +141,7 @@
 
     &:link,
     &:visited {
-      text-decoration: none;
       color: white;
-    }
-    &:hover,
-    &:active {
-      background-color: black;
     }
   }
 
