@@ -1,0 +1,11 @@
+.m-about {
+  em {
+    font-style: normal;
+    @extend .m-about__super;
+  }
+
+  strong {
+    font-weight: inherit;
+    @extend .m-about__born;
+  }
+}
