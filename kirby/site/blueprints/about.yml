@@ -1,0 +1,51 @@
+title: About
+
+pages: false
+
+files:
+  max: 1
+
+options:
+  delete: false
+  template: false
+  status: false
+
+fields:
+  title:
+    label: Title
+    type: title
+
+  about:
+    label: About
+    type: textarea
+    buttons:
+      - bold
+      - italic
+
+  exhibitions:
+    label: Exhibitions
+    type: structure
+    style: table
+    fields:
+      year:
+        label: Year
+        type: date
+        format: YYYY
+      events:
+        label: Events
+        type: tags
+
+  clients:
+    label: Clients
+    type: tags
+
+  press:
+    label: Press
+    type: structure
+    fields:
+      name:
+        label: Name
+        type: text
+      link:
+        label: Link
+        type: url

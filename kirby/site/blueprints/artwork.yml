@@ -1,0 +1,50 @@
+title: Artwork
+
+pages: false
+
+files:
+  max: 1
+
+fields:
+  title:
+    label: Title
+    type: text
+    width: 1/2
+
+  info:
+    label: Show Info
+    type: checkbox
+    text: Show artwork info
+    width: 1/2
+
+  shop:
+    label: Shop Link
+    type: url
+
+  year:
+    label: Year
+    type:  date
+    format: YYYY
+    width: 1/2
+
+  medium:
+    label: Medium
+    type: text
+    width: 1/2
+
+  width:
+    label: Width
+    type: number
+    min: 1
+    width: 1/3
+
+  height:
+    label: Height
+    type: number
+    min: 1
+    width: 1/3
+
+  unit:
+    label: Dimensions Unit
+    type: text
+    width: 1/3

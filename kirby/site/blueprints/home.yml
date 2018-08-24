@@ -1,0 +1,14 @@
+title: Home
+
+files: false
+
+options:
+  status: false
+
+pages:
+  template: artwork
+
+fields:
+  title:
+    label: Title
+    type: text
