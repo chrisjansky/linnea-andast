@@ -1,19 +1,25 @@
 block template-variables
-  - var page = {title: "Linnéa And-Ast", description: ""}
+  - var title = "Linnéa And-Ast"
+  - var description = "Linnéa And-Ast is a visual artist and illustrator based in Gothenburg, Sweden."
 
 doctype
 html(lang="en")
   head
     block template-head
       meta(charset="utf-8")
-      title!= page.title
-      meta(name="description" content=page.description)
+      title!= title
+      meta(name="description" content=description)
       meta(name="author" content="Christian Jánský")
       meta(name="viewport" content="width=device-width, initial-scale=1")
       
       link(rel="stylesheet" href="https://use.typekit.net/odw2sqi.css")
         
       link(rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128" href="src/images/favicon.ico")
+      
+      meta(property="og:type" content="website")
+      meta(property="og:title" content=title)
+      meta(property="og:description" content=description)
+      meta(property="og:image" content="http://www.linneaandast.se/assets/images/og-share.png")
 
       = '\n'
       <!-- build:css /src/css/style-min.css -->
