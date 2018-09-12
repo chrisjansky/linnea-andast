@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="https://use.typekit.net/odw2sqi.css">
   <link rel="shortcut icon" sizes="16x16 32x32 48x48 64x64 128x128" href="assets/images/favicon.ico">
 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?= $site->title()->html() ?> | <?= $page->title()->html() ?>">
+  <meta property="og:description" content="<?= $site->description()->html() ?>">
+  <meta property="og:image" content="http://www.linneaandast.se/assets/images/og-share.png">
+
   <?= css('assets/css/style-min.css') ?>
 
 </head>
