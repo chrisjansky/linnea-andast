@@ -56,11 +56,18 @@
     margin-bottom: .5rem;
   }
 
-  &__frame {
+  @at-root [class^="m-projects__frame"],
+  [class*="m-projects__frame"] {
     position: relative;
     margin: 0 .5rem;
 
     flex-grow: 1;
+  }
+
+  &__frame--video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__image {
@@ -76,6 +83,19 @@
     &.flickity-lazyloaded,
     &.flickity-lazyerror {
       opacity: 1;
+    }
+  }
+
+  &__video {
+    position: relative;
+    z-index: 1500;
+
+    max-height: calc(100vh - 5.75em);
+
+    cursor: url("../images/cursor-play.png") 12 18, pointer;
+
+    &.is--playing {
+      cursor: url("../images/cursor-pause.png") 13 16, pointer;
     }
   }
 

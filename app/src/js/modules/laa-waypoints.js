@@ -21,24 +21,10 @@ module.exports = {
 
         if (direction == "up") {
           document.body.classList.remove("Hud--is-active");
+          window.pauseVideo();
         }
       }
     });
-
-    var sliderEl = document.querySelector("[data-slider]");
-    if (sliderEl !== null) {
-      new Waypoint({
-        element: sliderEl,
-        handler: function(direction) {
-          if (direction == "down") {
-            window.sliderObj.focus();
-            window.sliderObj.unpausePlayer();
-          } else {
-            window.sliderObj.pausePlayer();
-          }
-        }
-      });
-    }
 
     /* Return to make later calls possible */
     return instance;

@@ -1,5 +1,5 @@
 module.exports = {
-  init: (function instance() {
+  init: (function invoke() {
     var sliderEl = document.querySelector("[data-slider]");
 
     if (sliderEl !== null) {
@@ -14,7 +14,7 @@ module.exports = {
 
       window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
         /* Dismiss if cell was not clicked */
-        if ( !cellElement ) {
+        if ( !cellElement || pointer.target.tagName == "VIDEO" ) {
           return;
         }
 
@@ -27,14 +27,49 @@ module.exports = {
 
       window.sliderObj.on( 'change' , function( index ) {
         var isLast = index == window.sliderObj.cells.length - 1;
+
         if (document.body.classList.contains("Masthead--active")) {
           document.body.classList.toggle("Slider--end", isLast);
+        }
+
+        window.pauseVideo();
+        window.playVideo();
+      });
+
+      new Waypoint({
+        element: sliderEl,
+        handler: function(direction) {
+          if (direction == "down") {
+            window.sliderObj.focus();
+            window.sliderObj.unpausePlayer();
+
+            window.playVideo();
+          } else {
+            window.sliderObj.pausePlayer();
+          }
         }
       });
     }
 
     /* Return to make later calls possible */
-    return instance;
+    return invoke;
   /* Auto run */
   })()
+}
+
+window.pauseVideo = function() {
+  /* Pause previously playing video */
+  if (window.currentVideo) {
+    window.currentVideo.pause();
+    window.currentVideo.currentTime = 0;
+  }
+}
+
+window.playVideo = function() {
+  var slide = window.sliderObj.selectedElement;
+
+  window.currentVideo = slide.querySelector("[data-video]");
+  if (window.currentVideo) {
+    window.currentVideo.play();
+  }
 }

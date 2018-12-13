@@ -22,16 +22,19 @@ block template-body
       - var artwork = index + 1
       figure.m-projects__item
         .m-projects__blankbutton &nbsp;
-        .m-projects__frame
-          img.m-projects__image(data-flickity-lazyload="src/images/temp/artwork-" + artwork + ".jpg")
+        div(class= project.modifier ? "m-projects__frame--" + project.modifier : "m-projects__frame")
+          if project.video
+            video.m-projects__video(src=project.video data-video)
+          else
+            img.m-projects__image(data-flickity-lazyload="src/images/temp/" + project.image)
         figcaption.m-projects__caption
           unless project.untitled
             span.m-projects__info
               h1.m-projects__title: +dummy(Math.ceil(Math.random() * 4), "words")
               mark.m-projects__year 2018
-            if project.type
+            if project.media
               strong.m-projects__media
-                = project.type
+                = project.media
                 | , 
                 = Math.ceil((Math.random() * 100) / 10) * 10
                 | &times;

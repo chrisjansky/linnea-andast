@@ -3,6 +3,7 @@ require('smoothscroll-polyfill').polyfill();
 /* Store for later and initialize inside */
 var
   laaFlickity = require('./modules/laa-flickity'),
+  laaHandlers = require('./modules/laa-handlers'),
   laaLazy = require('./modules/laa-lazyload'),
   laaToggle = require('./modules/laa-toggle'),
   laaSmoothScroll = require('./modules/laa-smoothscroll'),
@@ -30,6 +31,7 @@ Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container
   if(!match || !match[1]) return;
   document.body.setAttribute("class", match[1]);
 
+  laaHandlers.init();
   laaLazy.init();
   laaToggle.init();
   laaSmoothScroll.init();
@@ -39,13 +41,11 @@ Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container
 /* Direct DOM manupulation here */
 Barba.Dispatcher.on("transitionCompleted", function() {
   /* Destroy previous flickity.player if exists */
-  if (window.sliderObj !== undefined) {
-    window.sliderObj.stopPlayer();
-  }
-  laaFlickity.init();
-
+  if (window.sliderObj !== undefined) { window.sliderObj.stopPlayer(); }
   /* Destroy previous Waypoints */
-  Waypoint.destroyAll()
+  Waypoint.destroyAll();
+
+  laaFlickity.init();
   laaWaypoints.init();
 
   /* Don't change scroll position if back button pressed */

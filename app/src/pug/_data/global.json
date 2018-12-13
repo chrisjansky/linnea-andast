@@ -25,23 +25,33 @@
   ],
   "projects": [
     {
-      "type": "Cotton blanket",
+      "modifier": "video",
+      "video": "src/video/temp/video-konsthissen-1920.mp4"
+    },
+    {
+      "media": "Cotton blanket",
+      "image": "artwork-1.jpg",
       "button": true
     },
     {
+      "image": "artwork-2.jpg",
       "untitled": true
     },
     {
-      "type": "Oil Painting"
+      "image": "artwork-3.jpg",
+      "media": "Oil Painting"
     },
     {
-      "type": "Collage",
+      "image": "artwork-4.jpg",
+      "media": "Collage",
       "button": true
     },
     {
+      "image": "artwork-5.jpg",
       "untitled": true
     },
     {
+      "image": "artwork-6.jpg",
       "untitled": false
     }
   ]
