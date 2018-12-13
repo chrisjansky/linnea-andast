@@ -13,6 +13,12 @@ module.exports = {
     new Waypoint({
       element: document.querySelector("[data-waypoint='Masthead']"),
       handler: function(direction) {
+        var sliderEnd = window.sliderObj.selectedIndex == window.sliderObj.cells.length - 1;
+        if (sliderEnd) {
+          document.body.classList.remove("Slider--end");
+          window.sliderObj.select(0); /* Go to first slide */
+        }
+
         if (direction == "up") {
           document.body.classList.remove("Hud--is-active");
         }
@@ -24,12 +30,6 @@ module.exports = {
       new Waypoint({
         element: sliderEl,
         handler: function(direction) {
-          var sliderEnd = window.sliderObj.selectedIndex == window.sliderObj.cells.length - 1;
-
-          if (sliderEnd) {
-            document.body.classList.toggle("Slider--end", direction == "down");
-          }
-
           if (direction == "down") {
             window.sliderObj.unpausePlayer();
           } else {
