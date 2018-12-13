@@ -8,6 +8,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 
+  transition: background-color $duration--xl;
+
   font: $default__weight 1em $default__family;
   line-height: $default__leading;
 
