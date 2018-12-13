@@ -7,7 +7,7 @@ append template-variables
 block template-body
   +hud("Index")
 
-  +masthead
+  +masthead(true)
   
   .m-top
     a.m-top__scroll(href="#work")
@@ -48,13 +48,3 @@ block template-body
             unless page.name == "Shop"
               span.o-contact__bullet
             a.o-contact__link(href=page.href target=page.external ? "_blank" : null)= page.name
-
-  .m-next
-    .m-next__blankbutton &nbsp;
-    a.m-next__link(href="about.html")
-      each word in [1, 2, 3]
-        span.m-next__word
-          span.m-next__text
-            include ../svg/word-about.svg
-          span.m-next__arrow
-            include ../svg/arrow-right.svg

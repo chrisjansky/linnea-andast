@@ -31,6 +31,7 @@ module.exports = {
         element: sliderEl,
         handler: function(direction) {
           if (direction == "down") {
+            window.sliderObj.focus();
             window.sliderObj.unpausePlayer();
           } else {
             window.sliderObj.pausePlayer();

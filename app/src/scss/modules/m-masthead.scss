@@ -8,9 +8,8 @@
   z-index: 0;
 
   user-select: none;
-  pointer-events: none;
 
-  transition: color .25s 0s, opacity $duration--l $duration--l;
+  transition: color $duration--b;
 
   .Hud--is-active & {
     color: white;
@@ -20,12 +19,26 @@
     color: $primary--500;
   }
   .Slider--end & {
-    opacity: 0;
-    transition-delay: 0s;
+    z-index: 2000; /* Cover .m-projects */
+  }
+
+  &__content {
+    position: relative;
+    white-space: nowrap;
   }
 
   &__blankbutton {
     @include hud-button;
     visibility: hidden;
+  }
+
+  &__logo {
+    pointer-events: none;
+    transition: opacity $duration--l $duration--l;
+
+    .Slider--end & {
+      opacity: 0;
+      transition-delay: 0s;
+    }
   }
 }

@@ -1,7 +1,17 @@
-mixin masthead
+mixin masthead(next)
   .o-spacer(data-waypoint="Masthead")
 
   .m-masthead
     .m-masthead__blankbutton &nbsp;
 
-    +logo("m-masthead__content")
+    .m-masthead__content
+      +logo("m-masthead__logo")
+      
+      if next
+        a.m-next(href="about.html")
+          each word in [1, 2, 3]
+            span.m-next__word
+              span.m-next__text
+                include ../../svg/word-about.svg
+              span.m-next__arrow
+                include ../../svg/arrow-right.svg

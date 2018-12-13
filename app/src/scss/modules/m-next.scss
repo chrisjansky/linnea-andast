@@ -2,37 +2,24 @@
   @include media("≥desktop") {
     font-size: $fluid--s;
   }
-  
-  position: fixed;
+
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  padding-bottom: 5vh;
 
   pointer-events: none;
 
+  @include media("portrait") {
+    height: $masthead-height--portrait;
+  }
+  @include media("landscape") {
+    height: $masthead-height--landscape;
+  }
+
   .Slider--end & {
-    z-index: 2000;
     pointer-events: auto;
-  }
-
-  &__blankbutton {
-    @include hud-button;
-    visibility: hidden;
-  }
-
-  &__link {
-    display: block;
-    margin-top: .5rem;
-    padding-bottom: 5vh;
-
-    white-space: nowrap;
-
-    @include media("portrait") {
-      height: $masthead-height--portrait;
-    }
-    @include media("landscape") {
-      height: $masthead-height--landscape;
-    }
   }
 
   &__word {
@@ -58,8 +45,8 @@
     @include text;
   }
 
-  &__link:hover &__text:after,
-  &__link:active &__text:after {
+  &:hover &__text:after,
+  &:active &__text:after {
     background-color: currentColor;
   }
 }
