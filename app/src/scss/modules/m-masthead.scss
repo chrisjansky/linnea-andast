@@ -25,6 +25,7 @@
   &__content {
     position: relative;
     white-space: nowrap;
+    overflow: hidden;
   }
 
   &__blankbutton {
