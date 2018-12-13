@@ -34,11 +34,5 @@
 
   &__logo {
     pointer-events: none;
-    transition: opacity $duration--l $duration--l;
-
-    .Slider--end & {
-      opacity: 0;
-      transition-delay: 0s;
-    }
   }
 }
