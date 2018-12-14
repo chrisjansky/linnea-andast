@@ -37,7 +37,6 @@ Icon
 /*.md
 
 assets/
-content/
 kirby/
 panel/
 thumbs/
@@ -50,3 +49,4 @@ site/fields/
 site/plugins/
 
 content/**/*.jpg
+content/**/*.mp4

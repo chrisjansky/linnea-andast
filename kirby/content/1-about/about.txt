@@ -1,0 +1,35 @@
+Title: About
+
+----
+
+About: Visual artist & illustrator, based in Gothenburg *(SE)*, b. **1989**
+
+----
+
+Exhibitions: 
+
+- 
+  year: 2018-03-28
+  events: On and On and On,Galleri Thomassen
+- 
+  year: 2018-06-14
+  events: Galleri Tillt
+- 
+  year: 2018-10-23
+  events: HDK Design Master Degree Show
+- 
+  year: 2019-01-25
+  events: Liljevalchs Vårsalong
+
+----
+
+Clients: IKEA,LUSH Cosmetics,Slowdown Studio,WRAP Magazine,ANNEX Vintage,Konsthissen,#ArtMadeThis,YoungArt
+
+----
+
+Press: 
+
+- 
+  name: 'Gurl Museum Day Q&A'
+  link: >
+    https://gurlmuseumday.com/magazine/2018/9/19/qa-linnea-and-ast
