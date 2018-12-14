@@ -16,9 +16,15 @@
           <?php if($artwork->isVisible() && $file = $artwork->file()): ?>
             <figure class="m-projects__item">
               <div class="m-projects__blankbutton">&nbsp;</div>
-              <div class="m-projects__frame">
-                <img class="m-projects__image" data-flickity-lazyload-src="<?= $file->resize(2880)->url() ?>" data-flickity-lazyload-srcset="<?= $file->resize(800)->url() ?> 800w, <?= $file->resize(1440)->url() ?> 1440w, <?= $file->resize(1920)->url() ?> 1920w, <?= $file->resize(2880)->url() ?> 2880w">
-              </div>
+              <?php if ($file->type() == "video") : ?>
+                <div class="m-projects__frame--video">
+                  <video class="m-projects__video" src="<?= $file->url() ?>" data-video autoplay="false" preload="auto"></video>
+                </div>
+              <?php else : ?>
+                <div class="m-projects__frame">
+                  <img class="m-projects__image" data-flickity-lazyload-src="<?= $file->resize(2880)->url() ?>" data-flickity-lazyload-srcset="<?= $file->resize(800)->url() ?> 800w, <?= $file->resize(1440)->url() ?> 1440w, <?= $file->resize(1920)->url() ?> 1920w, <?= $file->resize(2880)->url() ?> 2880w">
+                </div>
+              <?php endif; ?>
 
               <figcaption class="m-projects__caption">
                 <?php if($artwork->info()->bool()): ?>
