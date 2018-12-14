@@ -3,6 +3,11 @@ module.exports = {
     var videoObj = document.querySelectorAll("[data-video]");
 
     videoObj.forEach(function(instance) {
+      /* Add controls for touch devices */
+      if ("ontouchstart" in document.documentElement) {
+        instance.setAttribute("controls", true);
+      }
+
       instance.addEventListener("click", function() {
         var isPaused = instance.paused;
 

@@ -24,7 +24,7 @@ block template-body
         .m-projects__blankbutton &nbsp;
         div(class= project.modifier ? "m-projects__frame--" + project.modifier : "m-projects__frame")
           if project.video
-            video.m-projects__video(src=project.video data-video)
+            video.m-projects__video(src=project.video data-video autoplay="false" preload="auto")
           else
             img.m-projects__image(data-flickity-lazyload="src/images/temp/" + project.image)
         figcaption.m-projects__caption
