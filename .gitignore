@@ -48,3 +48,4 @@ app/src/svg/*.svg
 
 kirby/*
 !kirby/site/
+kirby/site/config/*
