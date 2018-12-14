@@ -1,0 +1,52 @@
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Temporary files
+# ---------------
+
+/thumbs/*
+!/thumbs/index.html
+
+/site/cache/*
+!/site/cache/index.html
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Kirby accounts
+# ---------------
+
+/site/accounts/*
+!/site/accounts/index.html
+
+# Avatars
+# ---------------
+
+/assets/avatars/*
+!/assets/avatars/index.html
+
+# My settings
+# ---------------
+
+.gitkeep
+/*.php
+/*.md
+
+assets/
+content/
+kirby/
+panel/
+thumbs/
+
+site/accounts/
+site/cache/
+site/config/
+site/fields/
+
+site/plugins/
+
+content/**/*.jpg

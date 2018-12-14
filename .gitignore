@@ -45,7 +45,3 @@ app/src/css/*
 app/src/temp/*
 app/src/html/*
 app/src/svg/*.svg
-
-kirby/*
-!kirby/site/
-kirby/site/config/*
