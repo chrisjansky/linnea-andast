@@ -24,6 +24,9 @@ module.exports = {
       instance.onpause = function() {
         instance.classList.remove("is--playing");
       }
+      instance.onended = function() {
+        instance.currentTime = 0;
+      }
     });
 
     return invoke;
