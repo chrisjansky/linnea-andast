@@ -47,7 +47,7 @@
           <ul class="m-about__bulletlist">
             <?php foreach ($page->press()->toStructure() as $press) : ?>
               <li data-appear="normal">
-                <a href="<?= $press->link() ?>"><?= $press->name() ?></a>
+                <a href="<?= $press->link() ?>" target="_blank"><?= $press->name() ?></a>
               </li>
             <?php endforeach ?>
           </ul>
