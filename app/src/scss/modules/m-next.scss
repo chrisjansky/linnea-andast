@@ -9,6 +9,8 @@
   width: 100%;
   padding-bottom: 5vh;
 
+  overflow: hidden;
+  white-space: nowrap;
   pointer-events: none;
 
   @include media("portrait") {
