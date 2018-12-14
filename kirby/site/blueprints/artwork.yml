@@ -5,6 +5,9 @@ pages: false
 files:
   max: 1
 
+options:
+  preview: false
+
 fields:
   title:
     label: Title
