@@ -5,9 +5,9 @@ mixin masthead(next)
     .m-masthead__blankbutton &nbsp;
     +logo("m-masthead__logo")
     
-    .m-masthead__next
-      .m-masthead__blankbutton &nbsp;
-      if next
+    if next
+      .m-masthead__next
+        .m-masthead__blankbutton &nbsp;
         a.m-next(href="about.html")
           each word in [1, 2, 3]
             span.m-next__word
