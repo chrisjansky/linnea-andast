@@ -32,7 +32,8 @@
   },
   "move": [
     "app/src/fonts/*",
-    "app/src/svg/*.svg"
+    "app/src/svg/*.svg",
+    "app/src/video/temp/*"
   ],
   "assets": [
     "node_modules/normalize.css/normalize.css",
