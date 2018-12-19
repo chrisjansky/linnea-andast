@@ -4,10 +4,10 @@ require('smoothscroll-polyfill').polyfill();
 var
   laaFlickity = require('./modules/laa-flickity'),
   laaHandlers = require('./modules/laa-handlers'),
-  laaLazy = require('./modules/laa-lazyload'),
-  laaToggle = require('./modules/laa-toggle'),
-  laaSmoothScroll = require('./modules/laa-smoothscroll'),
   laaInview = require('./modules/laa-inview'),
+  laaLazy = require('./modules/laa-lazyload'),
+  laaSmoothScroll = require('./modules/laa-smoothscroll'),
+  laaToggle = require('./modules/laa-toggle'),
   laaWaypoints = require('./modules/laa-waypoints');
 
 Barba.Pjax.start();
