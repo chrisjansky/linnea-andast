@@ -18,7 +18,7 @@
               <div class="m-projects__blankbutton">&nbsp;</div>
               <?php if ($file->type() == "video") : ?>
                 <div class="m-projects__frame--video">
-                  <video class="m-projects__video" src="<?= $file->url() ?>" data-video autoplay="false" preload="auto"></video>
+                  <video class="m-projects__video" src="<?= $file->url() ?>" data-video preload="auto"></video>
                 </div>
               <?php else : ?>
                 <div class="m-projects__frame">
