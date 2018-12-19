@@ -63,6 +63,7 @@
   }
 
   &__video {
+    background-color: currentColor;
     max-height: calc(100vh - 5.75em);
 
     cursor: url("../images/cursor-play.png") 12 18, pointer;
