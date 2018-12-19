@@ -40,8 +40,10 @@ Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container
 
 /* Direct DOM manupulation here */
 Barba.Dispatcher.on("transitionCompleted", function() {
-  /* Destroy previous flickity.player if exists */
-  if (window.sliderObj !== undefined) { window.sliderObj.stopPlayer(); }
+  /* Destroy previous flickity instance if exists */
+  if (window.sliderObj !== undefined) {
+    window.sliderObj.destroy();
+  }
   /* Destroy previous Waypoints */
   Waypoint.destroyAll();
 
