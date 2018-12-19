@@ -3,15 +3,12 @@
     font-size: $fluid--s;
   }
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-bottom: 5vh;
-
+  display: block;
   overflow: hidden;
   white-space: nowrap;
   pointer-events: none;
+  
+  padding-bottom: 5vh; /* Make underline visible */
 
   @include media("portrait") {
     height: $masthead-height--portrait;

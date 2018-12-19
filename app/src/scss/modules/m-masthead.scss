@@ -1,7 +1,5 @@
 .m-masthead {
-  @include media("≥desktop") {
-    font-size: $fluid--s;
-  }
+  @include media("≥desktop") { font-size: $fluid--s; }
 
   position: sticky;
   top: .5rem;
@@ -22,10 +20,6 @@
     z-index: 2000; /* Cover .m-projects */
   }
 
-  &__content {
-    position: relative;
-  }
-
   &__blankbutton {
     @include hud-button;
     visibility: hidden;
@@ -33,5 +27,12 @@
 
   &__logo {
     pointer-events: none;
+  }
+
+  &__next {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }

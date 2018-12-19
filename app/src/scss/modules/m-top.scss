@@ -40,7 +40,7 @@
   }
 
   &__link {
-    animation: fade $duration--xl both;
+    animation: fade $duration--xl backwards;
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i + 1}) {
