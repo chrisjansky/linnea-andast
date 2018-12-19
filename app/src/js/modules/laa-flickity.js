@@ -13,8 +13,9 @@ module.exports = {
       window.sliderObj.pausePlayer();
 
       window.sliderObj.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
-        /* Dismiss if cell was not clicked */
-        if ( !cellElement || pointer.target.tagName == "VIDEO" ) {
+        var target = pointer.target.tagName;
+        /* Dismiss if something clickable */
+        if ( target == "A" || target == "VIDEO" ) {
           return;
         }
 

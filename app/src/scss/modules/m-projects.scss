@@ -20,30 +20,6 @@
 
     margin: 0;
 
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 30%;
-      height: 100%;
-      z-index: 1100;
-    }
-
-    &:before {
-      left: 0;
-      cursor: url("../images/cursor-previous.png") 6 10, auto;
-    }
-
-    &:after {
-      right: 0;
-      cursor: url("../images/cursor-next.png") 6 10, auto;
-    }
-
-    body.Slider--end &:after {
-      content: none;
-    }
-
     &:last-child {
       justify-content: flex-end;
     }
@@ -87,9 +63,6 @@
   }
 
   &__video {
-    position: relative;
-    z-index: 1500;
-
     max-height: calc(100vh - 5.75em);
 
     cursor: url("../images/cursor-play.png") 12 18, pointer;
@@ -100,9 +73,6 @@
   }
 
   &__caption {
-    position: relative;
-    z-index: 1500; /* Cover cursor-previous :before */
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

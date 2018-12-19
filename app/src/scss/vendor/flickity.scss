@@ -4,3 +4,30 @@
     cursor: inherit;
   }
 }
+
+.flickity-viewport {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 2.5em;
+    width: 10%;
+    z-index: 5; /* Completely above .m-slider */
+  }
+
+  &:before {
+    left: 0;
+    cursor: url("../images/cursor-previous.png") 6 10, auto;
+  }
+
+  &:after {
+    right: 0;
+    cursor: url("../images/cursor-next.png") 6 10, auto;
+  }
+
+  body.Slider--end &:after {
+    /* Hide for the last slide */
+    pointer-events: none;
+  }
+}
