@@ -1,3 +1,5 @@
+console.info("%c Website design & code: Christian Jánský; ►www.christianjansky.name", "font-size: 1.25em;");
+
 require('smoothscroll-polyfill').polyfill();
 
 /* Store for later and initialize inside */
